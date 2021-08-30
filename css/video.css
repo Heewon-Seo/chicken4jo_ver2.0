@@ -1,109 +1,4 @@
-.video-foreground video {
-  min-height: 842px;
-  object-fit: fill;
-  overflow: hidden;
-  padding: 0;
-  margin: 0;
-}
 
-#about {
-  overflow: hidden;
-}
-.text-danger {
-  font-size: 13rem;
-}
-.top-page {
-  display: flex;
-  justify-content: space-between;
-}
-
-.title {
-  width: 50%;
-  margin-right: 0;
-}
-
-.comments {
-  box-shadow: #1a1e21;
-}
-
-.chat {
-  border-radius: 20px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  padding: 15px;
-  margin-bottom: 20px;
-  color: whitesmoke;
-}
-
-.messages {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-}
-
-.message {
-  border-radius: 20px;
-  padding: 8px 15px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  display: inline-block;
-}
-
-.yours {
-  align-items: flex-start;
-}
-
-.yours .message {
-  margin-right: 25%;
-  background-color: #eee;
-  color: gray;
-  position: relative;
-}
-
-.yours .message.last:after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: -10px;
-  width: 10px;
-  height: 20px;
-  background: transparent;
-  border-bottom-right-radius: 10px;
-}
-
-.mine {
-  align-items: flex-end;
-}
-
-.mine .message {
-  color: white;
-  margin-left: 25%;
-  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
-  background-attachment: fixed;
-  position: relative;
-}
-
-
-.video-background {
-  background: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -99;
-}
-
-.video-foreground,
-.video-background video {
-  opacity: 0.7;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  pointer-events: none;
-}
 
 .video-fluid {
   width: 100%;
@@ -163,10 +58,15 @@
   top: 2px;
   z-index: 20;
   opacity: 90%;
+  transition: all 0.3s;
 }
 
-.close:before {
+#close:before {
   content: "×";
+}
+
+#close:hover {
+  color: #1a1e21;
 }
 
 #fade:hover ~ #close {
@@ -209,6 +109,8 @@ video {
   transition: -webkit-transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out;
   transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
+  z-index: 3000;
+  cursor: pointer;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

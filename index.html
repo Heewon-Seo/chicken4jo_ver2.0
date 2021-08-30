@@ -64,7 +64,7 @@
           <div class="title">
           <h1 class="mb-0 text-light">
             CHICKEN
-            <span class="text-warning"><span class="text-danger">4</span>JO</span>
+            <span class="text-warning">4JO</span>
           </h1>
           <div class="subheading mb-5 text-light">Mini Project</div>
           <div class="social-icons">
@@ -140,18 +140,15 @@
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <a class="lightbox" href="#;" onclick="lightbox_open(0)">
-                  <video class="video-fluid" id="video1" autoplay loop muted>
+                  <video class="video-fluid" autoplay loop muted>
                     <source src="https://raw.githubusercontent.com/chicken4zo/files/master/coda.mp4" type="video/mp4" />
                   </video>
                   <div class="carousel-caption d-none d-md-block">
                     <h1>CODA</h1>
                     <p>2021년, 음악의 마법에 빠질 시간!<br>가장 조용한 세상에서 시작된 여름의 노래! </p>
                   </div>
-                </a>
               </div>
               <div class="carousel-item">
-                <a class="lightbox" href="#;" onclick="lightbox_open(1)">
                   <video class="video-fluid" autoplay loop muted>
                     <source src="https://raw.githubusercontent.com/chicken4zo/files/master/mogadishu.mp4" type="video/mp4" />
                   </video>
@@ -159,11 +156,8 @@
                     <h1>모가디슈</h1>
                     <p>내전으로 고립된 낯선 도시, 모가디슈<br>지금부터 우리의 목표는 오로지 생존이다! </p>
                   </div>
-                </a>
-
               </div>
               <div class="carousel-item">
-                <a class="lightbox" href="#;" onclick="lightbox_open(2)">
                   <video class="video-fluid" autoplay loop muted>
                     <source src="https://raw.githubusercontent.com/chicken4zo/files/master/hostage.mp4" type="video/mp4" />
                   </video>
@@ -171,10 +165,8 @@
                     <h1>인질</h1>
                     <p>평소와 똑같던 어느 새벽,<br>서울 한복판에서 증거도, 목격자도 없이 대한민국 톱배우 `황정민`이 납치된다. </p>
                   </div>
-                </a>
               </div>
               <div class="carousel-item">
-                <a class="lightbox" href="#;" onclick="lightbox_open(3)">
                   <video class="video-fluid" autoplay loop muted>
                     <source src="https://raw.githubusercontent.com/chicken4zo/files/master/spiderman.mp4" type="video/mp4" />
                   </video>
@@ -182,10 +174,8 @@
                     <h2>스파이더맨: 노웨이홈</h2>
                     <p>올해 마블 마지막 주자</p>
                   </div>
-                </a>
               </div>
               <div class="carousel-item">
-                <a class="lightbox" href="#;" onclick="lightbox_open(4)">
                   <video class="video-fluid" autoplay loop muted>
                     <source src="https://raw.githubusercontent.com/chicken4zo/files/master/dreamingcats.mp4" type="video/mp4" />
                   </video>
@@ -193,10 +183,8 @@
                     <h1>꿈꾸는 고양이</h1>
                     <p>서울의 달동네, 경기도 성남, 대구, 부산의 재개발 지역<br>곧 부서지고 버려질 이 동네엔 단지 살고 싶단 꿈을 꾸는 고양이들이 있다.</p>
                   </div>
-                </a>
               </div>
               <div class="carousel-item">
-                <a class="lightbox" href="#;" onclick="lightbox_open(5)">
                   <video class="video-fluid" autoplay loop muted>
                     <source src="https://raw.githubusercontent.com/chicken4zo/files/master/eternals.mp4" type="video/mp4" />
                   </video>
@@ -204,10 +192,8 @@
                     <h1>이터널스</h1>
                     <p>마블 스튜디오 신작<br>인류의 가장 오래된 적 '데비안츠'에 맞서 싸운다</p>
                   </div>
-                </a>
               </div>
               <div class="carousel-item">
-                <a class="lightbox" href="#;" onclick="lightbox_open(6)">
                   <video class="video-fluid" autoplay loop muted>
                     <source src="https://raw.githubusercontent.com/chicken4zo/files/master/freeguy.mp4" type="video/mp4" />
                   </video>
@@ -215,7 +201,6 @@
                     <h1>Free Guy</h1>
                     <p>“내 안의 히어로가 깨어난다!”<br>올여름, 시원하게 터지는 상상초월 엔터테이닝 액션 블록버스터</p>
                   </div>
-                </a>
               </div>
             </div>
             <!--/.Slides-->
@@ -250,7 +235,7 @@
 
           <!--팝업(모달창)-->
           <div id="video-container">
-            <a href="#;" class="close" id="close" onclick="lightbox_close()"></a>
+            <a href="#;" id="close"></a>
             <video id="video-player" width="100%" controls autoplay>
               <source id="video-source" src="" />
             </video>
@@ -260,6 +245,8 @@
         </div>
       </section>
       <hr class="m-0" />
+
+
       <!-- 오디오 -->
       <section class="resume-section audio-section" id="audio-container">
         <div class="resume-section-content">
@@ -319,64 +306,43 @@
             <div id="ground"></div>
           </div>
         </div>
+
+
+        <!--오디오 플레이어-->
         <div class="audio-box">
           <div class="top">
-            <i class="fas fa-times button fa-2x" onclick="closeAudio();"></i>
+            <span class="close-btn">
+            <span class="fas fa-times button fa-2x" id="close-btn"></span>
+            </span>
           <h5 id="song-title"></h5>
           </div>
-          <div id="controlpanel">
-            <i class="fas fa-backward button fa-2x" onclick="audioPrevious();"></i>
-            <div id="art">
-          <img id="album-art" src=""/>
+          <div id="control-panel">
+            <span class="backward-btn">
+            <span class="fas fa-backward button fa-2x"></span>
+              </span>
+            <div class="art-block">
+            <span class="pp-btn">
+            <span class="fas fa-pause button play-button fa-3x"></span>
+            <img id="album-art" src="" alt="album art"/>
+            </span>
             </div>
-          <audio class="audio">
-            <source id="audio-source" src=""/>
-          </audio>
-            <i class="fas fa-pause button play-button fa-2x" onclick="audioPlayPause();"></i>
-            <i class="fas fa-forward button fa-2x" onclick="audioNext();"></i>
+            <span class="forward-btn">
+            <span class="fas fa-forward button fa-2x"></span>
+              </span>
+            <span class="speaker">
+            <span class="fa fa-volume-up button speaker-btn fa-2x"></span>
+              </span>
           </div>
 
           <div class="song-list">
-            <ul>
-              <li id="audio1">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album1.jpg">
-                이무진 - 신호등
-              </li>
-              <li id="audio2">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album2.png">
-                아이유 - Celebrity
-              </li>
-              <li id="audio3">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album3.jpg">
-                D-Hack - OHAYO MY NIGHT
-              </li>
-              <li id="audio4">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album4.jpg">
-                Justin Bieber - Peaches
-              </li>
-              <li id="audio5">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album5.png">
-                슬기로운 의사생활 - 슈퍼스타
-              </li>
-              <li id="audio6">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album6.png">
-                에스파 - Next Level
-              </li>
-              <li id="audio7">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album7.png">
-                방탄소년단 - Butter
-              </li>
-              <li id="audio8">
-                <img src="https://raw.githubusercontent.com/chicken4zo/files/master/album8.jpg">
-                AKMU - NAKKA
-              </li>
-            </ul>
+            <ol>
+            </ol>
           </div>
         </div>
       </section>
       <hr class="m-0" />
     </div>
-    <!-- audio box -->
+    <!-- 오디오 플레이어 끝 -->
 
     <!-- Bootstrap core JS-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
